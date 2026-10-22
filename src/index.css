@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom cursor ── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff7a00;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 122, 0, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor-ring.hovered {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(255, 122, 0, 0.8);
+  background: rgba(255, 122, 0, 0.08);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0f0f0f; }
+::-webkit-scrollbar-thumb { background: #ff7a00; border-radius: 2px; }
+
+/* ── Selection ── */
+::selection { background: rgba(255, 122, 0, 0.3); color: #fff; }
+
+/* ── Base ── */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #080808;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ── Glassmorphism card ── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-orange {
+  background: rgba(255, 122, 0, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 122, 0, 0.15);
+}
+
+/* ── Glow effects ── */
+.glow-orange {
+  box-shadow: 0 0 40px rgba(255, 122, 0, 0.15), 0 0 80px rgba(255, 122, 0, 0.05);
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgba(255, 122, 0, 0.4);
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #ff7a00, #ff9a40, #ffba80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section title underline ── */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff7a00, transparent);
+  margin-top: 12px;
+  border-radius: 2px;
+}
+
+/* ── Noise texture overlay ── */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Animated gradient border ── */
+@keyframes borderRotate {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+.animated-border {
+  background: linear-gradient(90deg, #ff7a00, #ff9a40, #ff7a00);
+  background-size: 200% 200%;
+  animation: borderRotate 3s linear infinite;
+}
+
+/* ── Typewriter cursor ── */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: #ff7a00;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Progress bar shimmer ── */
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* ── Page transition ── */
+.page-transition {
+  animation: fadeSlideUp 0.5s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tilt card ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
+
+/* ── Orange button ── */
+.btn-orange {
+  @apply relative overflow-visible bg-orange-500 text-white font-display font-semibold px-7 py-3 rounded-full transition-all duration-300 inline-flex items-center justify-center;
+  z-index: 1;
+}
+
+.btn-orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff9a40, #ff7a00);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.btn-orange:hover::before { opacity: 1; }
+.btn-orange:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,122,0,0.4); }
+
+.btn-orange > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Ghost button ── */
+.btn-ghost {
+  @apply relative border border-white/20 text-white font-display font-semibold px-7 py-3 rounded-full transition-all duration-300 hover:border-orange-500 hover:text-orange-500 inline-flex items-center justify-center;
+}
+
+/* ── Orbital animation ── */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+.orbit { animation: orbit 8s linear infinite; }
+.orbit-reverse { animation: orbit 12s linear infinite reverse; }
+
+/* ── Audio sound-wave bar animation ── */
+@keyframes soundbar {
+  0%, 100% { height: 4px; opacity: 0.6; }
+  50% { height: 16px; opacity: 1; }
+}
+
+/* ── Accessibility: Reduced motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-spin-slow,
+  .animate-pulse,
+  .animate-float,
+  .shimmer::after,
+  .animated-border {
+    animation: none !important;
+  }
+}

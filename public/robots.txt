@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap placeholder (Update with your live production domain upon deployment, e.g., https://satyampal.dev/sitemap.xml)
+# Sitemap: https://YOUR_DOMAIN/sitemap.xml
