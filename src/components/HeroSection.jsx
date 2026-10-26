@@ -250,7 +250,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center py-20 lg:py-0 overflow-hidden bg-dark-900">
+    <section className="relative min-h-0 lg:landscape:min-h-screen flex items-center overflow-hidden bg-dark-900">
       <ParticleCanvas />
 
       {/* Radial glow */}
@@ -267,7 +267,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 sm:pb-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-12 lg:pb-16">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left — text & buttons (Preserved) */}
           <motion.div variants={container} initial="hidden" animate="show" className="w-full max-w-xl mx-auto md:max-w-none md:mx-0">
@@ -490,7 +490,7 @@ export default function HeroSection() {
 
         {/* Scroll hint (Preserved) */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="relative mt-8 sm:mt-10 mx-auto lg:mx-0 lg:mt-0 lg:absolute lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center gap-2 w-fit"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
