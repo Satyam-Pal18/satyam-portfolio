@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-28 bg-orange-500/10 blur-3xl pointer-events-none rounded-full" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
           
           {/* Col 1: Brand & Status (lg:col-span-4) */}

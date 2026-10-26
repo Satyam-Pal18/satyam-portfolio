@@ -25,8 +25,8 @@ export default function Home() {
       <SkillsSection />
 
       {/* Featured Projects Preview */}
-      <section className="py-28 bg-dark-900">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 sm:py-28 bg-dark-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
             <div>
               <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-3">Work</p>
@@ -39,7 +39,7 @@ export default function Home() {
             </Link>
           </FadeUp>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {featured.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
             ))}
@@ -50,10 +50,10 @@ export default function Home() {
       <ServicesSection />
 
       {/* CTA Banner */}
-      <section className="py-24 bg-dark-800/50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-20 sm:py-24 bg-dark-800/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
-            <div className="glass-orange rounded-3xl p-12 md:p-16 relative overflow-hidden">
+            <div className="glass-orange rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 relative overflow-hidden">
               {/* Glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent pointer-events-none" />
               <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-4">Let's work together</p>

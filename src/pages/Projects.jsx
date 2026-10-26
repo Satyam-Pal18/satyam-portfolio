@@ -21,15 +21,15 @@ export default function Projects() {
   return (
     <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
       {/* Header */}
-      <section className="pt-32 pb-16 bg-dark-900 relative overflow-hidden">
+      <section className="pt-28 sm:pt-32 pb-12 sm:pb-16 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
             <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-4">Portfolio</p>
-            <h1 className="font-display font-black text-5xl md:text-7xl leading-tight mb-6">
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-7xl leading-tight mb-6">
               Things I've <span className="gradient-text">built</span>
             </h1>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
               A curated collection of projects that showcase my skills in frontend development, React.js, and modern web applications.
             </p>
           </FadeUp>
@@ -37,14 +37,14 @@ export default function Projects() {
       </section>
 
       {/* Filter */}
-      <section className="py-8 bg-dark-800/50 sticky top-[72px] z-30 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-3 justify-center">
+      <section className="py-6 sm:py-8 bg-dark-800/50 sticky top-[72px] z-30 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {categories.map(cat => (
               <motion.button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2 rounded-full font-display font-medium text-sm transition-all duration-300 ${
+                className={`px-4 sm:px-5 py-2 rounded-full font-display font-medium text-xs sm:text-sm transition-all duration-300 ${
                   activeFilter === cat
                     ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                     : 'glass text-white/50 hover:text-white border border-white/5'
@@ -62,12 +62,12 @@ export default function Projects() {
       </section>
 
       {/* Grid */}
-      <section className="py-16 bg-dark-900">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 bg-dark-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeFilter}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

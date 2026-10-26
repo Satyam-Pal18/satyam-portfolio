@@ -13,17 +13,17 @@ export default function Resume() {
   return (
     <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
       {/* Header */}
-      <section className="pt-32 pb-12 bg-dark-900 relative overflow-hidden">
+      <section className="pt-28 sm:pt-32 pb-10 sm:pb-12 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-orange-500/4 blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6">
-          <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
             <div>
               <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-4">Resume</p>
-              <h1 className="font-display font-black text-5xl md:text-6xl">
+              <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl">
                 My <span className="gradient-text">CV</span>
               </h1>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="/resume.pdf"
                 download="Satyam_Pal_Frontend_Resume.pdf"
@@ -47,15 +47,15 @@ export default function Resume() {
       </section>
 
       {/* Resume card */}
-      <section className="pb-24 bg-dark-900">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="pb-20 sm:pb-24 bg-dark-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
-            <div className="glass rounded-3xl border border-white/5 overflow-hidden">
+            <div className="glass rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden">
               {/* Resume header */}
-              <div className="bg-gradient-to-r from-orange-500/10 to-transparent border-b border-white/5 p-10 md:p-14">
-                <h2 className="font-display font-black text-4xl text-white mb-1">Satyam Pal</h2>
-                <p className="text-orange-400 font-body text-lg mb-4">Frontend Developer</p>
-                <div className="flex flex-wrap gap-x-4 gap-y-2 text-white/50 text-sm font-mono">
+              <div className="bg-gradient-to-r from-orange-500/10 to-transparent border-b border-white/5 p-6 sm:p-10 md:p-14">
+                <h2 className="font-display font-black text-3xl sm:text-4xl text-white mb-1">Satyam Pal</h2>
+                <p className="text-orange-400 font-body text-base sm:text-lg mb-4">Frontend Developer</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-white/50 text-xs sm:text-sm font-mono">
                   <span>+91 79849 33274</span>
                   <span>·</span>
                   <span>satyampal426@gmail.com</span>
@@ -82,7 +82,7 @@ export default function Resume() {
                 </div>
               </div>
 
-              <div className="p-10 md:p-14 grid md:grid-cols-3 gap-12">
+              <div className="p-6 sm:p-10 md:p-14 grid md:grid-cols-3 gap-8 md:gap-12">
                 {/* Left column */}
                 <div className="md:col-span-1 space-y-10">
                   {/* Technical Skills */}

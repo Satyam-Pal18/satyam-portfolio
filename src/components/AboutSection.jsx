@@ -12,17 +12,17 @@ const strengths = [
 
 export default function AboutSection() {
   return (
-    <section className="py-28 bg-dark-800/50 relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-dark-800/50 relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-orange-500/4 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: image / visual */}
           <FadeUp>
             <div className="relative">
               {/* Code-style card */}
-              <div className="glass rounded-3xl p-8 font-mono text-sm leading-8 border border-white/5">
+              <div className="glass rounded-3xl p-6 sm:p-8 font-mono text-xs sm:text-sm leading-7 sm:leading-8 border border-white/5">
                 <div className="flex gap-2 mb-6">
                   {['#ff5f57','#febc2e','#28c840'].map(c => (
                     <div key={c} className="w-3 h-3 rounded-full" style={{ background: c }} />
@@ -47,7 +47,7 @@ export default function AboutSection() {
 
               {/* Floating badge */}
               <motion.div
-                className="absolute -bottom-6 -right-6 glass-orange rounded-2xl px-5 py-4"
+                className="absolute -bottom-4 right-0 sm:-bottom-6 sm:-right-4 md:-right-6 glass-orange rounded-2xl px-4 py-3 sm:px-5 sm:py-4"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -77,7 +77,7 @@ export default function AboutSection() {
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {strengths.map(({ icon: Icon, label, desc }) => (
                   <div key={label} className="glass rounded-2xl p-4 border border-white/5 group hover:border-orange-500/20 transition-colors">
                     <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center mb-3 group-hover:bg-orange-500/20 transition-colors">

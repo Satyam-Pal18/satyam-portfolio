@@ -9,8 +9,8 @@ const iconMap = { FiCode, FiLayout, FiSmartphone, FiZap, FiBox }
 
 export default function ServicesSection() {
   return (
-    <section className="py-28 bg-dark-800/50 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-20 sm:py-28 bg-dark-800/50 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp className="text-center mb-16">
           <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-3">What I Offer</p>
           <h2 className="font-display font-black text-4xl md:text-5xl">
@@ -18,7 +18,7 @@ export default function ServicesSection() {
           </h2>
         </FadeUp>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon]
             return (

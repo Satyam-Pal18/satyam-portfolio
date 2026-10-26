@@ -45,11 +45,13 @@
 ::selection { background: rgba(255, 122, 0, 0.3); color: #fff; }
 
 /* ── Base ── */
+html,
 body {
   font-family: 'Inter', sans-serif;
   background: #080808;
   color: #fff;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* ── Glassmorphism card ── */

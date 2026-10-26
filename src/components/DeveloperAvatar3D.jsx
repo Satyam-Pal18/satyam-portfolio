@@ -553,12 +553,12 @@ export default function DeveloperAvatar3D({ isSpeaking = false, speechIntensity 
   // Graceful Fallback if WebGL is disabled or unsupported
   if (!hasWebGL) {
     return (
-      <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-2 border-orange-500/40 glow-orange flex items-center justify-center bg-dark-800">
+      <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-orange-500/40 glow-orange flex items-center justify-center bg-dark-800">
         <div className="text-center p-6">
-          <div className="w-24 h-24 mx-auto mb-3 rounded-full bg-gradient-to-tr from-orange-500 to-orange-400/80 flex items-center justify-center shadow-lg">
-            <span className="text-4xl">👨‍💻</span>
+          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 rounded-full bg-gradient-to-tr from-orange-500 to-orange-400/80 flex items-center justify-center shadow-lg">
+            <span className="text-3xl sm:text-4xl">👨‍💻</span>
           </div>
-          <p className="font-display font-bold text-white text-base">Satyam Pal</p>
+          <p className="font-display font-bold text-white text-sm sm:text-base">Satyam Pal</p>
           <p className="text-xs font-mono text-orange-400 mt-1">Frontend Developer</p>
         </div>
       </div>
@@ -568,7 +568,7 @@ export default function DeveloperAvatar3D({ isSpeaking = false, speechIntensity 
   return (
     <div
       ref={mountRef}
-      className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center pointer-events-auto"
+      className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center pointer-events-auto"
       aria-label="Interactive 3D Cartoon Developer Character"
     />
   )

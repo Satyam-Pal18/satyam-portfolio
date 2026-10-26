@@ -28,15 +28,15 @@ export default function Contact() {
   return (
     <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
       {/* Header */}
-      <section className="pt-32 pb-16 bg-dark-900 relative overflow-hidden">
+      <section className="pt-28 sm:pt-32 pb-12 sm:pb-16 bg-dark-900 relative overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
             <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-4">Contact</p>
-            <h1 className="font-display font-black text-5xl md:text-7xl leading-tight mb-6">
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-7xl leading-tight mb-6">
               Let's <span className="gradient-text">connect</span>
             </h1>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
               Have a project in mind or just want to say hello? I'd love to hear from you.
             </p>
           </FadeUp>
@@ -44,9 +44,9 @@ export default function Contact() {
       </section>
 
       {/* Main */}
-      <section className="py-20 bg-dark-800/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-5 gap-12">
+      <section className="py-16 sm:py-20 bg-dark-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Left info (2/5) */}
             <div className="lg:col-span-2 space-y-8">
               <FadeUp>
@@ -106,7 +106,7 @@ export default function Contact() {
 
             {/* Right form (3/5) */}
             <FadeUp delay={0.1} className="lg:col-span-3">
-              <div className="glass rounded-3xl p-8 md:p-10 border border-white/5">
+              <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/5">
                 <h3 className="font-display font-bold text-xl text-white mb-8">Send a message</h3>
                 <ContactForm />
               </div>

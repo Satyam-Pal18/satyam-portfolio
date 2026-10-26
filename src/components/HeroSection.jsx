@@ -250,7 +250,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-dark-900">
+    <section className="relative min-h-screen flex items-center py-20 lg:py-0 overflow-hidden bg-dark-900">
       <ParticleCanvas />
 
       {/* Radial glow */}
@@ -267,10 +267,10 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 sm:pb-16">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left — text & buttons (Preserved) */}
-          <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div variants={container} initial="hidden" animate="show" className="w-full max-w-xl mx-auto md:max-w-none md:mx-0">
             <motion.div variants={item} className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-orange-500" />
               <span className="font-mono text-xs text-orange-500 tracking-widest uppercase">
@@ -281,15 +281,15 @@ export default function HeroSection() {
 
             <motion.h1
               variants={item}
-              className="font-display font-black text-5xl md:text-6xl lg:text-7xl leading-tight mb-4"
+              className="font-display font-black text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-4"
             >
               Hi, I'm{' '}
               <span className="gradient-text glow-text">Satyam</span>
               <span className="text-white">.</span>
             </motion.h1>
 
-            <motion.div variants={item} className="flex items-center gap-2 mb-6 h-12">
-              <span className="font-display font-bold text-2xl md:text-3xl text-white/80">
+            <motion.div variants={item} className="flex items-center gap-2 mb-6 h-10 sm:h-12">
+              <span className="font-display font-bold text-xl sm:text-2xl md:text-2xl lg:text-3xl text-white/80">
                 {typed}
               </span>
               <span className="typewriter-cursor" />
@@ -297,13 +297,13 @@ export default function HeroSection() {
 
             <motion.p
               variants={item}
-              className="text-white/50 text-lg leading-relaxed max-w-lg mb-10"
+              className="text-white/50 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg mb-8 sm:mb-10"
             >
               I build exceptional digital experiences with React.js — translating design into
               pixel-perfect, performant code. Based in Ahmedabad, India. 🇮🇳
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-wrap gap-4 mb-12">
+            <motion.div variants={item} className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
               <a
                 href="/resume.pdf"
                 download="Satyam_Pal_Frontend_Resume.pdf"
@@ -329,15 +329,15 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Stats (Preserved) */}
-            <motion.div variants={item} className="flex gap-8">
+            <motion.div variants={item} className="grid grid-cols-3 gap-2 sm:gap-6 max-w-sm sm:max-w-md">
               {[
                 { num: '5+', label: 'Projects Built' },
                 { num: '1+', label: 'Year Experience' },
                 { num: '∞', label: 'Coffee Cups' },
               ].map(({ num, label }) => (
-                <div key={label}>
-                  <p className="font-display font-black text-2xl gradient-text">{num}</p>
-                  <p className="text-white/40 text-xs mt-0.5">{label}</p>
+                <div key={label} className="text-left">
+                  <p className="font-display font-black text-xl sm:text-2xl gradient-text">{num}</p>
+                  <p className="text-white/40 text-[11px] sm:text-xs mt-0.5 leading-tight">{label}</p>
                 </div>
               ))}
             </motion.div>
@@ -345,7 +345,7 @@ export default function HeroSection() {
 
           {/* Right — 3D Cartoon Developer Character, Orbit & Meet Me Button */}
           <motion.div
-            className="relative flex flex-col items-center justify-center"
+            className="relative flex flex-col items-center justify-center w-full"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -353,9 +353,9 @@ export default function HeroSection() {
             {/* 3D Character Area with Halo Orbit Rings */}
             <div className="relative flex items-center justify-center">
               {/* Rotating Dashed Orange Rings */}
-              <div className="absolute w-80 h-80 sm:w-96 sm:h-96 rounded-full border border-dashed border-orange-500/15 animate-spin-slow pointer-events-none" />
+              <div className="absolute w-72 h-72 sm:w-80 sm:h-80 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border border-dashed border-orange-500/15 animate-spin-slow pointer-events-none" />
               <div
-                className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-orange-500/10 animate-spin-slow pointer-events-none"
+                className="absolute w-56 h-56 sm:w-64 sm:h-64 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full border border-orange-500/10 animate-spin-slow pointer-events-none"
                 style={{ animationDirection: 'reverse', animationDuration: '14s' }}
               />
 
@@ -369,7 +369,7 @@ export default function HeroSection() {
                 >
                   <div
                     className="w-3 h-3 rounded-full bg-orange-500/70 shadow-[0_0_8px_rgba(255,122,0,0.6)]"
-                    style={{ transform: 'translateX(160px)' }}
+                    style={{ transform: 'translateX(clamp(115px, 14vw, 160px))' }}
                   />
                 </motion.div>
               ))}
@@ -381,21 +381,21 @@ export default function HeroSection() {
 
               {/* Floating Tech Badges */}
               <motion.div
-                className="absolute -left-6 sm:-left-8 top-12 glass-orange rounded-2xl px-4 py-3 z-10 pointer-events-none"
+                className="absolute -left-2 sm:-left-4 md:-left-4 lg:-left-8 top-8 sm:top-12 glass-orange rounded-2xl px-3 py-2 sm:px-4 sm:py-3 z-10 pointer-events-none"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <p className="text-xs text-white/40 font-mono">Main Stack</p>
-                <p className="text-sm font-display font-bold text-orange-400">React.js</p>
+                <p className="text-[10px] sm:text-xs text-white/40 font-mono">Main Stack</p>
+                <p className="text-xs sm:text-sm font-display font-bold text-orange-400">React.js</p>
               </motion.div>
 
               <motion.div
-                className="absolute -right-6 sm:-right-8 bottom-16 glass rounded-2xl px-4 py-3 z-10 pointer-events-none"
+                className="absolute -right-2 sm:-right-4 md:-right-4 lg:-right-8 bottom-12 sm:bottom-16 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 z-10 pointer-events-none"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               >
-                <p className="text-xs text-white/40 font-mono">Styling</p>
-                <p className="text-sm font-display font-bold text-white">Tailwind CSS</p>
+                <p className="text-[10px] sm:text-xs text-white/40 font-mono">Styling</p>
+                <p className="text-xs sm:text-sm font-display font-bold text-white">Tailwind CSS</p>
               </motion.div>
             </div>
 

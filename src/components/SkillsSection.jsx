@@ -43,10 +43,10 @@ export default function SkillsSection() {
   const category = skillCategories[active]
 
   return (
-    <section className="py-28 bg-dark-900 relative">
+    <section className="py-20 sm:py-28 bg-dark-900 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeUp className="text-center mb-16">
           <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-3">My Skills</p>
           <h2 className="font-display font-black text-4xl md:text-5xl">
@@ -56,14 +56,14 @@ export default function SkillsSection() {
 
         {/* Category tabs */}
         <FadeUp delay={0.1} className="flex flex-wrap justify-center gap-3 mb-14">
-          <div role="tablist" aria-label="Skill categories" className="flex flex-wrap justify-center gap-3">
+          <div role="tablist" aria-label="Skill categories" className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {skillCategories.map((cat, i) => (
               <button
                 key={cat.label}
                 role="tab"
                 aria-selected={active === i}
                 onClick={() => setActive(i)}
-                className={`px-5 py-2.5 rounded-full font-display font-medium text-sm transition-all duration-300 ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-display font-medium text-xs sm:text-sm transition-all duration-300 ${
                   active === i
                     ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
                     : 'glass text-white/65 hover:text-white border border-white/5'
@@ -76,7 +76,7 @@ export default function SkillsSection() {
           </div>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Skill bars */}
           <div>
             <motion.div

@@ -64,16 +64,16 @@ export default function About() {
   return (
     <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-dark-900 relative overflow-hidden">
+      <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-dark-900 relative overflow-hidden">
         <div className="absolute -top-32 right-0 w-96 h-96 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-4">About Me</p>
-            <h1 className="font-display font-black text-5xl md:text-7xl leading-tight mb-6">
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-7xl leading-tight mb-6">
               The person<br />
               behind the <span className="gradient-text">code</span>
             </h1>
-            <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
+            <p className="text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
               I'm Satyam Pal — a Frontend Developer who transforms ideas into polished, performant digital experiences. Driven by curiosity, fueled by coffee.
             </p>
           </FadeUp>
@@ -81,9 +81,9 @@ export default function About() {
       </section>
 
       {/* Bio + info */}
-      <section className="py-20 bg-dark-800/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
+      <section className="py-16 sm:py-20 bg-dark-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Career objective */}
             <FadeUp>
               <h2 className="font-display font-bold text-2xl text-white mb-5 section-title">Career Objective</h2>
@@ -100,7 +100,7 @@ export default function About() {
 
             {/* Info card */}
             <FadeUp delay={0.1}>
-              <div className="glass rounded-3xl p-8 border border-white/5 space-y-5">
+              <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/5 space-y-5">
                 {[
                   { icon: FiMapPin,   label: 'Location', value: 'Ahmedabad, Gujarat, India' },
                   { icon: FiMail,     label: 'Email',    value: 'satyampal426@gmail.com' },
@@ -124,10 +124,10 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 bg-dark-900 relative overflow-hidden">
+      <section className="py-20 sm:py-24 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeUp className="text-center mb-16">
             <p className="font-mono text-xs text-orange-500 tracking-widest uppercase mb-3">Journey</p>
             <h2 className="font-display font-black text-4xl md:text-5xl">
